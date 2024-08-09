@@ -55,6 +55,22 @@ module Enumerable
     end
     arr
   end
+
+  def my_none?
+    for ele in self
+      return false if yield ele
+    end
+    true
+  end
+
+  def my_select
+    arr = []
+    for ele in self
+      arr << ele if yield ele
+    end
+    arr
+  end
+
 end
 
 
